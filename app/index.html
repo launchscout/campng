@@ -29,13 +29,9 @@
     </div>
 
     <div class="row">
-      <div id="recipe_list_view" class="span3">
+      <div id="recipe_list_view" class="span3" ng-controller="RecipesCtrl">
         <ul class="nav nav-tabs nav-stacked">
-
-          <li><a href="#recipes/1">Steak</a></li>
-
-          <li><a href="#recipes/2">Potatoes</a></li>
-
+          <li ng-repeat="recipe in recipes"><a href="#recipes/1">{{recipe.title}}</a></li>
         </ul>
         <a class="btn" href="#recipes/new">New Recipe</a>
       </div>
