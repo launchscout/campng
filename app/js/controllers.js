@@ -5,4 +5,5 @@ angular.module("cookbook").controller("RecipesCtrl", function ($scope) {
 });
 
 angular.module("cookbook").controller("RecipeShowCtrl", function ($scope) {
+  $scope.recipe = {title: "Pancackes", description: "Mmm.. delicious"};
 });
