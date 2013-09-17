@@ -8,6 +8,10 @@ angular.module("cookbook").controller("RecipeShowCtrl", function ($scope, Recipe
   $scope.recipe = Recipe.find($routeParams.recipeId);
 });
 
-angular.module("cookbook").controller("EditRecipeCtrl", function ($scope, Recipe, $routeParams) {
+angular.module("cookbook").controller("EditRecipeCtrl", function ($scope, Recipe, $routeParams, $location) {
   $scope.recipe = Recipe.find($routeParams.recipeId);
+
+  $scope.saveRecipe = function() {
+    $location.path("/recipes/" + this.recipe.id);
+  }
 });
