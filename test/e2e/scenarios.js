@@ -26,4 +26,15 @@ describe('cookbook', function() {
 
   });
 
+  describe("Editing a recipe", function() {
+    beforeEach(function() {
+      browser().navigateTo('#recipes/2/edit');
+    });
+    it('should have text field for title', function() {
+      expect(element('#recipe_edit_view input[name=title]').val()).
+        toMatch(/Pancakes/);
+    });
+
+  });
+
 });
