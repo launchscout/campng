@@ -32,7 +32,7 @@
     <div class="row">
       <div id="recipe_list_view" class="span3" ng-controller="RecipesCtrl">
         <ul class="nav nav-tabs nav-stacked">
-          <li ng-repeat="recipe in recipes"><a href="#recipes/1">{{recipe.title}}</a></li>
+          <li ng-repeat="recipe in recipes"><a href="#recipes/{{recipe.id}}">{{recipe.title}}</a></li>
         </ul>
         <a class="btn" href="#recipes/new">New Recipe</a>
       </div>
