@@ -17,11 +17,11 @@ describe('cookbook', function() {
 
   describe("Viewing a recipe", function() {
     beforeEach(function() {
-      browser().navigateTo('#recipes/1');
+      browser().navigateTo('#recipes/2');
     });
     it('should display title and description', function() {
       expect(element('#recipe_view dd').text()).
-        toMatch(/Mmm.. delicious/);
+        toMatch(/Good/);
     });
 
   });
