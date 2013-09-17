@@ -7,3 +7,7 @@ angular.module("cookbook").controller("RecipesCtrl", function ($scope, Recipe) {
 angular.module("cookbook").controller("RecipeShowCtrl", function ($scope, Recipe, $routeParams) {
   $scope.recipe = Recipe.find($routeParams.recipeId);
 });
+
+angular.module("cookbook").controller("EditRecipeCtrl", function ($scope, Recipe, $routeParams) {
+  $scope.recipe = Recipe.find($routeParams.recipeId);
+});

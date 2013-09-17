@@ -2,5 +2,6 @@
 angular.module('cookbook', ["ngRoute"]).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.
+      when('/recipes/:recipeId/edit', {templateUrl: 'templates/editRecipe.html', controller: "EditRecipeCtrl"}).
       when('/recipes/:recipeId', {templateUrl: 'templates/recipe.html', controller: "RecipeShowCtrl"});
   }]);
