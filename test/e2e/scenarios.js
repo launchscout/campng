@@ -35,6 +35,16 @@ describe('cookbook', function() {
         toMatch(/Pancakes/);
     });
 
+    describe("Changing the title", function() {
+      beforeEach(function() {
+        input("recipe.title").enter("Casserole");
+        element("input[type=submit]").click();
+      });
+      it("should have changed the title", function() {
+        expect(element('#recipe_view dt').text()).
+          toMatch(/Casserole/);
+        });
+    });
   });
 
 });
