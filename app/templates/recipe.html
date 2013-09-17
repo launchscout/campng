@@ -4,4 +4,11 @@
     <dd>{{recipe.description}}</dd>
   </dl>
   <a href="#recipes/{{recipe.id}}/edit">Edit</a>
+  <p>
+    Ingredients:
+    <ul>
+      <li ng-repeat="ingredient in recipe.ingredients">{{ingredient.name}}</li>
+    </ul>
+    <input name="ingredientName" typeahead="ingredient.name for ingredient in ingredients" ng-model="selectedIngredient.name"/>
+  </p>
 </div>
