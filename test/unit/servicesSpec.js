@@ -16,8 +16,8 @@ describe('service', function() {
         {id: 2, title: "Pancakes", description: "Good"}
       ];
     }));
-    it("should find by id", function() {
-      expect(Recipe.find(1).title).toEqual("Yummy");
-    });
+    it("should find by id", inject(function(Recipe) {
+      expect(Recipe.find(1).title).toEqual("Waffles");
+    }));
   });
 });
