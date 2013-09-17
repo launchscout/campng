@@ -10,12 +10,6 @@ describe('service', function() {
   });
 
   describe("Recipe", function() {
-    beforeEach(inject(function(Recipe) {
-      Recipe.recipes = [
-        {id: 1, title: "Waffles", description: "Yummy"},
-        {id: 2, title: "Pancakes", description: "Good"}
-      ];
-    }));
     it("should find by id", inject(function(Recipe) {
       expect(Recipe.find(1).title).toEqual("Waffles");
     }));
