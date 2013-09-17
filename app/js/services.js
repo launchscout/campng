@@ -9,8 +9,8 @@ angular.module("cookbook").
 angular.module("cookbook").factory("Recipe", function() {
   return {
     recipes: [
-      {id: 1, title: "Waffles", description: "Yummy"},
-      {id: 2, title: "Pancakes", description: "Good"}
+      {id: 1, title: "Waffles", description: "Yummy", ingredients: []},
+      {id: 2, title: "Pancakes", description: "Good", ingredients: []}
     ],
     find: function(id) {
       return _.findWhere(this.recipes, {id: Number(id)});
