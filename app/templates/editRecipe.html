@@ -1,8 +1,9 @@
 <div id="recipe_edit_view" style="display: block;">
-  <form class="form-vertical">
-    <div class="control-group">
-      <label for="title">Title</label>
-      <input name="title" ng-model="recipe.title" type="text">
+  <form name="recipeForm" class="form-vertical" novalidate="true">
+    <div class="control-group" ng-class="{error: recipeForm.title.$invalid}">
+      <label for="title" class="control-label">Title</label>
+      <input name="title" ng-model="recipe.title" type="text" ng-required="true">
+      <span class="inline-help text-error" ng-show="recipeForm.title.$error.required">You need a title!</span>
     </div>
     <div class="control-group">
       <label for="description">Description</label>

@@ -12,6 +12,8 @@ angular.module("cookbook").controller("EditRecipeCtrl", function ($scope, Recipe
   $scope.recipe = Recipe.find($routeParams.recipeId);
 
   $scope.saveRecipe = function() {
-    $location.path("/recipes/" + this.recipe.id);
+    if (this.recipeForm.$valid) {
+      $location.path("/recipes/" + this.recipe.id);
+    }
   }
 });
