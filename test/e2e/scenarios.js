@@ -31,6 +31,14 @@ describe('cookbook', function() {
         toMatch(/Good/);
     });
 
+    describe("with markdown in the description", function() {
+      beforeEach(function() {
+        browser().navigateTo('#recipes/3');
+      });
+      it("should render the markdown", function() {
+        expect(element('#recipe_view dd p em').text()).toMatch(/emphasized/)
+      });
+    });
   });
 
   describe("Editing a recipe", function() {
