@@ -10,6 +10,10 @@ angular.module("cookbook").controller("RecipeShowCtrl", function ($scope, Recipe
   $http.get('/app/ingredients.json').success(function(data) {
     $scope.ingredients = data;
   });
+  $scope.addIngredient = function() {
+    this.recipe.ingredients.push(this.selectedIngredient);
+    this.selectedIngredient = {};
+  }
 
 });
 
