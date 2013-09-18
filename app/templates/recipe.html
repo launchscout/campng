@@ -1,7 +1,7 @@
 <div id="recipe_view">
   <dl>
     <dt>{{recipe.title}}</dt>
-    <dd>{{recipe.description}}</dd>
+    <dd ng-bind-html="recipe.description | markdown"></dd>
   </dl>
   <a href="#recipes/{{recipe.id}}/edit">Edit</a>
   <p>
