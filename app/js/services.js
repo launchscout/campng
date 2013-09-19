@@ -13,7 +13,7 @@ angular.module("cookbook").factory("Recipe", function() {
       {id: 2, title: "Pancakes", description: "Good"}
     ],
     find: function(id) {
-      // Do something awesome here. Possibly using underscore
+      return _.findWhere(this.recipes, {id: id});
     }
   }
 });
