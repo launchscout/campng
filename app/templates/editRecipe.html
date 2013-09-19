@@ -2,11 +2,11 @@
   <form class="form-vertical">
     <div class="control-group">
       <label for="title">Title</label>
-      <input name="title" type="text">
+      <input name="title" ng-model="recipe.title" type="text">
     </div>
     <div class="control-group">
       <label for="description">Description</label>
-      <textarea name="description"></textarea>
+      <textarea name="description" ng-model="recipe.description"></textarea>
     </div>
     <div class="form-actions">
       <input type="submit" class="btn primary" value="Save">
