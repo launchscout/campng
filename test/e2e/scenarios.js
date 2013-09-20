@@ -13,6 +13,13 @@ describe('cookbook', function() {
         toMatch(/Pancakes/);
     });
 
+    describe("filtering", function() {
+      it("should filter recipes by search term", function() {
+        input("search").enter("Pan");
+        expect(repeater("#recipe_list_view li").count()).toEqual(1);
+      });
+    });
+
   });
 
   describe("Viewing a recipe", function() {
