@@ -50,6 +50,14 @@ describe('cookbook', function() {
         toMatch(/Pancakes/);
     });
 
+    describe("changing title to something invalid", function() {
+      beforeEach(function() {
+        input("recipe.title").enter("");
+      });
+      it("displays an error", function() {
+        expect(element(".text-error").text()).toMatch(/You need a title/);
+      });
+    });
     describe("Changing the title", function() {
       beforeEach(function() {
         input("recipe.title").enter("Casserole");
