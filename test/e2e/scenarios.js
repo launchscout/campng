@@ -55,7 +55,7 @@ describe('cookbook', function() {
         input("recipe.title").enter("");
       });
       it("displays an error", function() {
-        expect(element(".text-error").text()).toMatch(/You need a title/);
+        expect(element(".text-error").text()).toMatch(/You need this/);
       });
     });
     describe("Changing the title", function() {
