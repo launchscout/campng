@@ -20,6 +20,10 @@ angular.module("cookbook").controller("RecipeShowCtrl", function ($scope, Recipe
 angular.module("cookbook").controller("EditRecipeCtrl", function ($scope, Recipe, $routeParams, $location) {
   $scope.recipe = Recipe.find($routeParams.recipeId);
 
+  $scope.errorMessages = {
+    required: "You need this"
+  };
+
   $scope.saveRecipe = function() {
     if (this.recipeForm.$valid) {
       $location.path("/recipes/" + this.recipe.id);

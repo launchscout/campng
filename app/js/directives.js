@@ -9,15 +9,16 @@ angular.module("cookbook").
 
 
 angular.module("cookbook").
-  directive('errors', function(ErrorMessages) {
+  directive('errors', function() {
     return {
       restrict: "A",
       scope: {
-        errors: "=",
+        errors: "="
       },
       controller: function($scope) {
-        $scope.errorFor = function(errKey) { return ErrorMessages.error(errKey);}
+        $scope.errorMessageFor = function(errorKey) {
+        }
       },
-      template: "<span class='inline-help text-error' ng-repeat='(errorKey, isError) in errors' ng-show='isError'>{{errorMessages[errorKey]}}</span>"
+      template: "<span class='inline-help text-error' ng-repeat='(errorKey, isError) in errors' ng-show='isError'>{{errorMessageFor(errorKey)}}</span>"
     };
   });
