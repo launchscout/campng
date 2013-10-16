@@ -13,10 +13,14 @@ angular.module("cookbook").
     return {
       restrict: "A",
       scope: {
-        errors: "="
+        errors: "=",
+        errorMessages: "=",
       },
       controller: function($scope) {
         $scope.errorMessageFor = function(errorKey) {
+          if (this.errorMessages) {
+            return this.errorMessages[errorKey];
+          }
         }
       },
       templateUrl: "templates/errors.html"

@@ -3,7 +3,7 @@
     <div class="control-group" ng-class="{error: recipeForm.title.$invalid}">
       <label for="title" class="control-label">Title</label>
       <input name="title" ng-model="recipe.title" type="text" ng-required="true" ng-pattern="/^[A-Z].*/">
-      <span errors="recipeForm.title.$error" />
+      <span errors="recipeForm.title.$error" error-messages="errorMessages" />
 
     </div>
     <div class="control-group">
