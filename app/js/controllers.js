@@ -30,3 +30,20 @@ angular.module("cookbook").controller("EditRecipeCtrl", function ($scope, Recipe
     }
   }
 });
+
+angular.module("cookbook").controller("NewRecipeCtrl", function ($scope, Recipe, $routeParams, $location) {
+  $scope.recipe = {
+    id: 17
+  };
+
+  $scope.errorMessages = {
+    required: "You need this"
+  };
+
+  $scope.saveRecipe = function() {
+    if (this.recipeForm.$valid) {
+      Recipe.recipes.push(this.recipe);
+      $location.path("/recipes/" + this.recipe.id);
+    }
+  }
+});
