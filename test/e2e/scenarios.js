@@ -70,4 +70,17 @@ describe('cookbook', function() {
     });
   });
 
+  describe("Creating a recipe", function() {
+    beforeEach(function() {
+      browser().navigateTo('#recipes/new');
+      input("recipe.title").enter("Casserole");
+      input("recipe.description").enter("is yummy");
+      element("input[type=submit]").click();
+    });
+    it("should have changed the title", function() {
+      expect(element('#recipe_view dt').text()).
+        toMatch(/Casserole/);
+    });
+  });
+
 });
