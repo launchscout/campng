@@ -19,6 +19,6 @@ angular.module("cookbook").
         $scope.errorMessageFor = function(errorKey) {
         }
       },
-      template: "<span class='inline-help text-error' ng-repeat='(errorKey, isError) in errors' ng-show='isError'>{{errorMessageFor(errorKey)}}</span>"
+      templateUrl: "templates/errors.html"
     };
   });
