@@ -33,7 +33,7 @@ angular.module("cookbook").controller("EditRecipeCtrl", function ($scope, Recipe
 
 angular.module("cookbook").controller("NewRecipeCtrl", function ($scope, Recipe, $routeParams, $location) {
   $scope.recipe = {
-    id: 17
+    id: _.max(_.pluck(Recipe.recipes, "id")) + 1
   };
 
   $scope.errorMessages = {
