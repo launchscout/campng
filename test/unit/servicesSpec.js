@@ -14,7 +14,7 @@ describe('service', function() {
       expect(Recipe.recipes.length).toEqual(2);
     }));
     it("should find by id", inject(function(Recipe) {
-      expect(Recipe.find(1).title).toEqual("Waffles");
+      expect(Recipe.find("1").title).toEqual("Waffles");
     }));
   });
 });
