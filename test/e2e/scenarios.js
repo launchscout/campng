@@ -47,11 +47,11 @@ describe('cookbook', function() {
     });
     describe("Changing the title to something invalid", function() {
       beforeEach(function() {
-        input("recipe.title").enter("lower case");
+        input("recipe.title").enter("wut");
       });
       it("should have changed the title", function() {
-        expect(element('.text-error').css("display")).
-          toEqual("block");
+        expect(element('.text-error:visible').html()).
+          toMatch("capitalized");
         });
     });
 
