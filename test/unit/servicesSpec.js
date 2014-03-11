@@ -10,6 +10,9 @@ describe('service', function() {
   });
 
   describe("Recipe", function() {
+    it("should have recipes", inject(function(Recipe) {
+      expect(Recipe.recipes.length).toEqual(2);
+    }));
     it("should find by id", inject(function(Recipe) {
       expect(Recipe.find(1).title).toEqual("Waffles");
     }));
