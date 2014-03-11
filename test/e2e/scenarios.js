@@ -45,6 +45,16 @@ describe('cookbook', function() {
           toMatch(/Casserole/);
         });
     });
+    describe("Changing the title to something invalid", function() {
+      beforeEach(function() {
+        input("recipe.title").enter("lower case");
+      });
+      it("should have changed the title", function() {
+        expect(element('.text-error').css("display")).
+          toEqual("block");
+        });
+    });
+
   });
 
 });
