@@ -13,6 +13,7 @@ describe('cookbook', function() {
         toMatch(/Pancakes/);
     });
 
+
   });
 
   describe("Viewing a recipe", function() {
@@ -35,6 +36,14 @@ describe('cookbook', function() {
         toMatch(/Pancakes/);
     });
 
+    describe("changing title to something invalid", function() {
+      beforeEach(function() {
+        input("recipe.title").enter("");
+      });
+      it("displays an error", function() {
+        expect(element(".text-error").text()).toMatch(/You need/);
+      });
+    });
     describe("Changing the title", function() {
       beforeEach(function() {
         input("recipe.title").enter("Casserole");
@@ -45,16 +54,19 @@ describe('cookbook', function() {
           toMatch(/Casserole/);
         });
     });
-    describe("Changing the title to something invalid", function() {
-      beforeEach(function() {
-        input("recipe.title").enter("wut");
-      });
-      it("should have changed the title", function() {
-        expect(element('.text-error:visible').html()).
-          toMatch("capitalized");
-        });
-    });
+  });
 
+  describe("Creating a recipe", function() {
+    beforeEach(function() {
+      browser().navigateTo('#recipes/new');
+      input("recipe.title").enter("Casserole");
+      input("recipe.description").enter("is yummy");
+      element("input[type=submit]").click();
+    });
+    it("should have changed the title", function() {
+      expect(element('#recipe_view dt').text()).
+        toMatch(/Casserole/);
+    });
   });
 
 });
