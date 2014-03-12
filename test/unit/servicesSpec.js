@@ -17,4 +17,20 @@ describe('service', function() {
       expect(Recipe.create().id).toEqual(3);
     }));
   });
+
+  describe("Ingredient", function() {
+    var returnedIngredients;
+    beforeEach(inject(function($httpBackend, Ingredient, $rootScope) {
+      $httpBackend.expectGET("/ingredients.json").respond([{id: 1, name: "Broccoli"}]);
+      Ingredient.all().success(function(ingredients) {
+        returnedIngredients = ingredients;
+      });
+      $rootScope.$apply();
+      $httpBackend.flush();
+    }));
+    it("gets ingredients", function() {
+      expect(returnedIngredients[0].name).toEqual("Broccoli");
+    });
+
+  });
 });
