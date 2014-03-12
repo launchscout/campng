@@ -13,5 +13,8 @@ describe('service', function() {
     it("should find by id", inject(function(Recipe) {
       expect(Recipe.find("1").title).toEqual("Waffles");
     }));
+    it("creates a new one", inject(function(Recipe) {
+      expect(Recipe.create().id).toEqual(3);
+    }));
   });
 });

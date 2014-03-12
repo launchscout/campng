@@ -14,6 +14,14 @@ angular.module("cookbook").factory("Recipe", function() {
     ],
     find: function(id) {
       return _.findWhere(this.recipes, {id: Number(id)});
+    },
+    create: function() {
+      return {
+        id: _.max(_.pluck(this.recipes, "id")) + 1,
+        title: "",
+        description: ""
+      };
     }
+
   }
 });
