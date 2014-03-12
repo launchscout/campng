@@ -54,6 +54,15 @@ describe('cookbook', function() {
           toMatch(/Casserole/);
         });
     });
+    describe("Adding ingredients", function() {
+      beforeEach(function() {
+        input("selectedIngredient").select("2");
+        element("#add-ingredient").click();
+      });
+      it("should add the ingredient", function() {
+        expect(element("ul#ingredients").html()).toMatch(/Broccoli/);
+      });
+    });
   });
 
   describe("Creating a recipe", function() {

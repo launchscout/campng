@@ -4,4 +4,7 @@
     <dd>{{recipe.description}}</dd>
   </dl>
   <a href="#recipes/{{recipe.id}}/edit">Edit</a>
+  <ul>
+    <li ng-repeat="ingredient in ingredients">{{ingredient.name}}</li>
+  </ul>
 </div>
