@@ -24,6 +24,16 @@ describe('cookbook', function() {
       expect(element('#recipe_view dd').text()).
         toMatch(/Good/);
     });
+    describe("Adding ingredients", function() {
+      beforeEach(function() {
+        select("selectedIngredient").option(1);
+        element("#add-ingredient").click();
+      });
+      it("should add the ingredient", function() {
+        expect(element("ul#ingredients").html()).toMatch(/Broccoli/);
+      });
+    });
+
 
   });
 
@@ -53,15 +63,6 @@ describe('cookbook', function() {
         expect(element('#recipe_view dt').text()).
           toMatch(/Casserole/);
         });
-    });
-    describe("Adding ingredients", function() {
-      beforeEach(function() {
-        input("selectedIngredient").select("2");
-        element("#add-ingredient").click();
-      });
-      it("should add the ingredient", function() {
-        expect(element("ul#ingredients").html()).toMatch(/Broccoli/);
-      });
     });
   });
 
