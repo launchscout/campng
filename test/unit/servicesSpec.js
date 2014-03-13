@@ -21,7 +21,7 @@ describe('service', function() {
   describe("Ingredient", function() {
     var returnedIngredients;
     beforeEach(inject(function($httpBackend, Ingredient, $rootScope) {
-      $httpBackend.expectGET("/ingredients.json").respond([{id: 1, name: "Broccoli"}]);
+      $httpBackend.expectGET("/app/ingredients.json").respond([{id: 1, name: "Broccoli"}]);
       Ingredient.all().success(function(ingredients) {
         returnedIngredients = ingredients;
       });
