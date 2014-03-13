@@ -4,10 +4,16 @@ angular.module("cookbook").controller("RecipesCtrl", function ($scope, Recipe) {
   $scope.recipes = Recipe.recipes;
 });
 
-angular.module("cookbook").controller("RecipeShowCtrl", function ($scope, Recipe, $routeParams, $http) {
+angular.module("cookbook").controller("RecipeShowCtrl", function ($scope, Recipe, $routeParams, $http, Ingredient) {
   $scope.recipe = Recipe.find($routeParams.recipeId);
-  $http.get("/app/ingredients.json").then(function(response) {
-    $scope.ingredients = response.data;
+  $scope.ingredients = []
+  $scope.selectedIngredient = {};
+  $scope.addIngredient = function(ingredient) {
+    if (!$scope.recipe.ingredients) { $scope.recipe.ingredients = [] }
+    $scope.recipe.ingredients.push(ingredient);
+  };
+  Ingredient.all().success(function(ingredients) {
+    $scope.ingredients = ingredients;
   });
 });
 

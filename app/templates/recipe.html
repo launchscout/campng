@@ -3,8 +3,11 @@
     <dt>{{recipe.title}}</dt>
     <dd>{{recipe.description}}</dd>
   </dl>
-  <a href="#recipes/{{recipe.id}}/edit">Edit</a>
-  <ul>
-    <li ng-repeat="ingredient in ingredients">{{ingredient.name}}</li>
+  <ul id='ingredients'>
+    <li ng-repeat="ingredient in recipe.ingredients">{{ingredient.name}}</li>
   </ul>
+  <select ng-model="selectedIngredient" ng-options="ingredient.name for ingredient in ingredients" />
+  <input type="button" id="add-ingredient" ng-click="addIngredient(selectedIngredient)" value="Add ingredient" />
+  <br/>
+  <a href="#recipes/{{recipe.id}}/edit">Edit</a>
 </div>

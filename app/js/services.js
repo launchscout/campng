@@ -25,3 +25,11 @@ angular.module("cookbook").factory("Recipe", function() {
 
   }
 });
+
+angular.module("cookbook").factory("Ingredient", function($http) {
+  return {
+    all: function() {
+      return $http.get("/app/ingredients.json");
+    }
+  }
+});
