@@ -9,6 +9,7 @@
     <div class="control-group">
       <label for="description">Description</label>
       <textarea name="description" ng-model="recipe.description"></textarea>
+      <div markdown-preview text="recipe.description"></div>
     </div>
     <div class="form-actions">
       <input type="submit" class="btn primary" value="Save" ng-click="saveRecipe()">
