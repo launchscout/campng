@@ -1,5 +1,11 @@
 # angular-seed — the seed for AngularJS apps
 
+## Running the Protracts spec
+
+1. `node_modules/protractor/bin/webdriver-manager update`
+2. `node_modules/protractor/bin/webdriver-manager start` # in a new terminal window
+3. `node_modules/protractor/bin/protractor config/protractor-e2e.conf.js`
+
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
