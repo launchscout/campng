@@ -11,8 +11,8 @@ describe("app", function() {
     var page = new BasePage();
 
     describe("editing a recipe", function() {
-	Given(function() { editPage.visitPage(); });
-        And(function() { editPage.clickEdit(); });
+	Given(function() { showPage.visitPage(); });
+        And(function() { showPage.clickEdit(); });
         And(function() { editPage.fillTitle("Awesome Pancakes"); });
         When(function() {  editPage.submit(); });
 	Then(function() { expect(page.currentUrl()).toEqual("http://localhost:8000/app/index.html#/recipes/2"); });
