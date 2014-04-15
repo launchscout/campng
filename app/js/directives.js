@@ -7,18 +7,12 @@ angular.module("cookbook").
     };
   }]);
 
-angular.module("cookbook").directive("markdownPreview", function($sce){
+angular.module("cookbook").directive("markdownPreview", function(){
     return {
-    	restrict: "EA",
-    	template: "<div ng-bind-html='value'></div>",
+    	template: "<div ng-bind-html='text | markdown'></div>",
     	replace: true,
     	scope: {
-  	    text: "=",
-    	},
-    	link: function(scope, element, attrs) {
-  	    scope.$watch("text", function() {
-      		scope.value = markdown.toHTML(scope.text);
-  	    })
+  	    text: "="
     	}
     };
 });
