@@ -21,7 +21,7 @@ describe('directives', function() {
     beforeEach(inject(function($rootScope) {
       $rootScope.text = "*hi* there";
     }));
-    it('should print current version', function() {
+    it('should preview markdown', function() {
       inject(function($compile, $rootScope) {
         var element = $compile('<div markdown-preview text="text"></div>')($rootScope);
         $rootScope.$apply();
