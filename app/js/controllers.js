@@ -9,9 +9,10 @@ angular.module("cookbook").controller("RecipeShowCtrl", function ($scope, Recipe
 });
 
 angular.module("cookbook").controller("EditRecipeCtrl", function ($scope, Recipe, $routeParams, $location) {
-  $scope.recipe = Recipe.find($routeParams.recipeId);
+  $scope.recipe = angular.copy(Recipe.find($routeParams.recipeId));
 
   $scope.saveRecipe = function() {
+    angular.copy(this.recipe, Recipe.find(this.recipe.id));
     $location.path("/recipes/" + this.recipe.id);
   }
 });
